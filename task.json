@@ -1,0 +1,303 @@
+[
+  {
+    "name": "Amazon-Google",
+    "category": ["0", "1"],
+    "trainset": "data/Amazon-Google/train.txt",
+    "validset": "data/Amazon-Google/valid.txt",
+    "testset": "data/Amazon-Google/test.txt"
+  },
+  {
+    "name": "Abt-Buy",
+    "category": ["0", "1"],
+    "trainset": "data/Abt-Buy/train.txt",
+    "validset": "data/Abt-Buy/valid.txt",
+    "testset": "data/Abt-Buy/test.txt"
+  },
+  {
+    "name": "Beer",
+    "category": ["0", "1"],
+    "trainset": "data/Beer/train.txt",
+    "validset": "data/Beer/valid.txt",
+    "testset": "data/Beer/test.txt"
+  },
+  {
+    "name": "Itunes-Amazon",
+    "category": ["0", "1"],
+    "trainset": "data/Itunes-Amazon/train.txt",
+    "validset": "data/Itunes-Amazon/valid.txt",
+    "testset": "data/Itunes-Amazon/test.txt"
+  },
+  {
+    "name": "Walmart-Amazon",
+    "category": ["0", "1"],
+    "trainset": "data/Walmart-Amazon/train.txt",
+    "validset": "data/Walmart-Amazon/valid.txt",
+    "testset": "data/Walmart-Amazon/test.txt"
+  },
+  {
+    "name": "Fodors-Zagats",
+    "category": ["0", "1"],
+    "trainset": "data/Fodors-Zagats/train.txt",
+    "validset": "data/Fodors-Zagats/valid.txt",
+    "testset": "data/Fodors-Zagats/test.txt"
+  },
+  {
+    "name": "DBLP-ACM",
+    "category": ["0", "1"],
+    "trainset": "data/DBLP-ACM/train.txt",
+    "validset": "data/DBLP-ACM/valid.txt",
+    "testset": "data/DBLP-ACM/test.txt"
+  },
+  {
+    "name": "DBLP-Scholar",
+    "category": ["0", "1"],
+    "trainset": "data/DBLP-Scholar/train.txt",
+    "validset": "data/DBLP-Scholar/valid.txt",
+    "testset": "data/DBLP-Scholar/test.txt"
+  },
+  {
+    "name": "Company",
+    "category": ["0", "1"],
+    "trainset": "data/Company/train.txt",
+    "validset": "data/Company/valid.txt",
+    "testset": "data/Company/test.txt"
+  },
+  {
+    "name": "Dirty/DBLP-ACM",
+    "category": ["0", "1"],
+    "trainset": "data/Dirty/DBLP-ACM/train.txt",
+    "validset": "data/Dirty/DBLP-ACM/valid.txt",
+    "testset": "data/Dirty/DBLP-ACM/test.txt"
+  },
+  {
+    "name": "Dirty/DBLP-Scholar",
+    "category": ["0", "1"],
+    "trainset": "data/Dirty/DBLP-Scholar/train.txt",
+    "validset": "data/Dirty/DBLP-Scholar/valid.txt",
+    "testset": "data/Dirty/DBLP-Scholar/test.txt"
+  },
+  {
+    "name": "Dirty/Walmart-Amazon",
+    "category": ["0", "1"],
+    "trainset": "data/Dirty/Walmart-Amazon/train.txt",
+    "validset": "data/Dirty/Walmart-Amazon/valid.txt",
+    "testset": "data/Dirty/Walmart-Amazon/test.txt"
+  },
+  {
+    "name": "Dirty/Itunes-Amazon",
+    "category": ["0", "1"],
+    "trainset": "data/Dirty/Itunes-Amazon/train.txt",
+    "validset": "data/Dirty/Itunes-Amazon/valid.txt",
+    "testset": "data/Dirty/Itunes-Amazon/test.txt"
+  },
+  {
+    "name": "WDC/Computer-Title-XL",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/computers/title/train.txt.xlarge",
+    "validset": "data/WDC/computers/title/valid.txt.xlarge",
+    "testset": "data/WDC/computers/title/test.txt"
+  },
+  {
+    "name": "WDC/Computer-Desc-XL",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/computers/title_description/train.txt.xlarge",
+    "validset": "data/WDC/computers/title_description/valid.txt.xlarge",
+    "testset": "data/WDC/computers/title_description/test.txt"
+  },
+  {
+    "name": "WDC/Computer-Brand-XL",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/computers/title_description_brand/train.txt.xlarge",
+    "validset": "data/WDC/computers/title_description_brand/valid.txt.xlarge",
+    "testset": "data/WDC/computers/title_description_brand/test.txt"
+  },
+  {
+    "name": "WDC/Computer-Spec-XL",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/computers/title_description_brand_specTableContent/train.txt.xlarge",
+    "validset": "data/WDC/computers/title_description_brand_specTableContent/valid.txt.xlarge",
+    "testset": "data/WDC/computers/title_description_brand_specTableContent/test.txt"
+  },
+  {
+    "name": "WDC/Computer-Title-L",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/computers/title/train.txt.large",
+    "validset": "data/WDC/computers/title/valid.txt.large",
+    "testset": "data/WDC/computers/title/test.txt"
+  },
+  {
+    "name": "WDC/Computer-Title-M",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/computers/title/train.txt.medium",
+    "validset": "data/WDC/computers/title/valid.txt.medium",
+    "testset": "data/WDC/computers/title/test.txt"
+  },
+  {
+    "name": "WDC/Computer-Title-S",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/computers/title/train.txt.small",
+    "validset": "data/WDC/computers/title/valid.txt.small",
+    "testset": "data/WDC/computers/title/test.txt"
+  },
+  {
+    "name": "WDC/Camera-Title-XL",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/cameras/title/train.txt.xlarge",
+    "validset": "data/WDC/cameras/title/valid.txt.xlarge",
+    "testset": "data/WDC/cameras/title/test.txt"
+  },
+  {
+    "name": "WDC/Camera-Title-L",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/cameras/title/train.txt.large",
+    "validset": "data/WDC/cameras/title/valid.txt.large",
+    "testset": "data/WDC/cameras/title/test.txt"
+  },
+  {
+    "name": "WDC/Camera-Title-M",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/cameras/title/train.txt.medium",
+    "validset": "data/WDC/cameras/title/valid.txt.medium",
+    "testset": "data/WDC/cameras/title/test.txt"
+  },
+  {
+    "name": "WDC/Camera-Title-S",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/cameras/title/train.txt.small",
+    "validset": "data/WDC/cameras/title/valid.txt.small",
+    "testset": "data/WDC/cameras/title/test.txt"
+  },
+  {
+    "name": "WDC/Watch-Title-XL",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/watches/title/train.txt.xlarge",
+    "validset": "data/WDC/watches/title/valid.txt.xlarge",
+    "testset": "data/WDC/watches/title/test.txt"
+  },
+  {
+    "name": "WDC/Watch-Title-L",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/watches/title/train.txt.large",
+    "validset": "data/WDC/watches/title/valid.txt.large",
+    "testset": "data/WDC/watches/title/test.txt"
+  },
+  {
+    "name": "WDC/Watch-Title-M",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/watches/title/train.txt.medium",
+    "validset": "data/WDC/watches/title/valid.txt.medium",
+    "testset": "data/WDC/watches/title/test.txt"
+  },
+  {
+    "name": "WDC/Watch-Title-S",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/watches/title/train.txt.small",
+    "validset": "data/WDC/watches/title/valid.txt.small",
+    "testset": "data/WDC/watches/title/test.txt"
+  },
+  {
+    "name": "WDC/Shoe-Title-XL",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/shoes/title/train.txt.xlarge",
+    "validset": "data/WDC/shoes/title/valid.txt.xlarge",
+    "testset": "data/WDC/shoes/title/test.txt"
+  },
+  {
+    "name": "WDC/Shoe-Title-L",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/shoes/title/train.txt.large",
+    "validset": "data/WDC/shoes/title/valid.txt.large",
+    "testset": "data/WDC/shoes/title/test.txt"
+  },
+  {
+    "name": "WDC/Shoe-Title-M",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/shoes/title/train.txt.medium",
+    "validset": "data/WDC/shoes/title/valid.txt.medium",
+    "testset": "data/WDC/shoes/title/test.txt"
+  },
+  {
+    "name": "WDC/Shoe-Title-S",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/shoes/title/train.txt.small",
+    "validset": "data/WDC/shoes/title/valid.txt.small",
+    "testset": "data/WDC/shoes/title/test.txt"
+  },
+  {
+    "name": "WDC/All-Title-XL",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/all/title/train.txt.xlarge",
+    "validset": "data/WDC/all/title/valid.txt.xlarge",
+    "testset": "data/WDC/all/title/test.txt"
+  },
+  {
+    "name": "WDC/All-Title-L",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/all/title/train.txt.large",
+    "validset": "data/WDC/all/title/valid.txt.large",
+    "testset": "data/WDC/all/title/test.txt"
+  },
+  {
+    "name": "WDC/All-Title-M",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/all/title/train.txt.medium",
+    "validset": "data/WDC/all/title/valid.txt.medium",
+    "testset": "data/WDC/all/title/test.txt"
+  },
+  {
+    "name": "WDC/All-Title-S",
+    "category": ["0", "1"],
+    "trainset": "data/WDC/all/title/train.txt.small",
+    "validset": "data/WDC/all/title/valid.txt.small",
+    "testset": "data/WDC/all/title/test.txt"
+  },
+  {
+    "name": "N/Amazon-Google",
+    "category": ["0", "1"],
+    "trainset": "data/1-N/Amazon-Google/train.txt",
+    "validset": "data/1-N/Amazon-Google/valid.txt",
+    "testset": "data/1-N/Amazon-Google/test.txt"
+},
+  {
+    "name": "N/DBLP-ACM",
+    "category": ["0", "1"],
+    "trainset": "data/1-N/DBLP-ACM/train.txt",
+    "validset": "data/1-N/DBLP-ACM/valid.txt",
+    "testset": "data/1-N/DBLP-ACM/test.txt"
+  },
+  {
+    "name": "N/Abt-Buy",
+    "category": ["0", "1"],
+    "trainset": "data/1-N/Abt-Buy/train.txt",
+    "validset": "data/1-N/Abt-Buy/valid.txt",
+    "testset": "data/1-N/Abt-Buy/test.txt"
+  },
+  {
+    "name": "N/Walmart-Amazon",
+    "category": ["0", "1"],
+    "trainset": "data/1-N/Walmart-Amazon/train.txt",
+    "validset": "data/1-N/Walmart-Amazon/valid.txt",
+    "testset": "data/1-N/Walmart-Amazon/test.txt"
+  },
+  {
+    "name": "N/Itunes-Amazon",
+    "category": ["0", "1"],
+    "trainset": "data/1-N/Itunes-Amazon/train.txt",
+    "validset": "data/1-N/Itunes-Amazon/valid.txt",
+    "testset": "data/1-N/Itunes-Amazon/test.txt"
+  },
+  {
+    "name": "DI2KG/Monitor",
+    "category": ["0", "1"],
+    "trainset": "data/DI2KG/Monitor/train.txt",
+    "validset": "data/DI2KG/Monitor/valid.txt",
+    "testset": "data/DI2KG/Monitor/test.txt"
+  },
+  {
+    "name": "DI2KG/Camera",
+    "category": ["0", "1"],
+    "trainset": "data/DI2KG/Camera/train.txt",
+    "validset": "data/DI2KG/Camera/valid.txt",
+    "testset": "data/DI2KG/Camera/test.txt"
+  }
+]
