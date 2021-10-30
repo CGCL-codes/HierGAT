@@ -117,6 +117,8 @@ class Dataset(data.Dataset):
         for i in range(self.attr_num):
             token_attr_adjs[i][xs[i]] = 1
         token_attr_adjs = torch.stack(token_attr_adjs)
+        # Currently, we only support aligned attributes, so the entity is connected to all attributes
+        # For simplicity, we omit this particular Attribute-Entity adjacency matrix
 
         y = self.tag2idx[tags]  # label
 
