@@ -29,7 +29,7 @@ def train(model, train_set, optimizer, scheduler=None, batch_size=32, su=None):
     model.train()
     for i, (batch, su_batch) in enumerate(zip(iterator, su_iterator)):
         # for monitoring
-        _, xs, y, _, masks = batch
+        _, xs, y, _, token_attr_adjs, left_xs, right_xs = batch
         _, _, zs, _, _, _ = su_batch
         _y = y
 

@@ -17,8 +17,8 @@ def eval_classifier(model, iterator):
     total_size = 0
     with torch.no_grad():
         for i, batch in enumerate(iterator):
-            _, x, y, _, masks = batch
-            logits, y1, y_hat = model(x, y, masks)
+            _, xs, y, _, token_attr_adjs, left_xs, right_xs = batch
+            logits, y1, y_hat = model(xs, left_xs, right_xs, y, token_attr_adjs)
 
             logits = logits.view(-1, logits.shape[-1])
             y1 = y1.view(-1)

@@ -104,26 +104,27 @@ class Dataset(data.Dataset):
         xs = [self.tokenizer.encode(text=attributes[0][i], text_pair=attributes[1][i],
                                     add_special_tokens=True, truncation="longest_first", max_length=self.max_len)
               for i in range(self.attr_num)]
-        left_zs = [self.tokenizer.encode(text=attributes[0][i], add_special_tokens=True,
+        left_xs = [self.tokenizer.encode(text=attributes[0][i], add_special_tokens=True,
                                          truncation="longest_first", max_length=self.max_len)
                    for i in range(self.attr_num)]
-        right_zs = [self.tokenizer.encode(text=attributes[1][i], add_special_tokens=True,
+        right_xs = [self.tokenizer.encode(text=attributes[1][i], add_special_tokens=True,
                                           truncation="longest_first", max_length=self.max_len)
                     for i in range(self.attr_num)]
 
-        masks = [torch.zeros(self.tokenizer.vocab_size, dtype=torch.int)
+        # Get Token-Attribute Graph
+        token_attr_adjs = [torch.zeros(self.tokenizer.vocab_size, dtype=torch.int)
                  for _ in range(self.attr_num)]
         for i in range(self.attr_num):
-            masks[i][xs[i]] = 1
-        masks = torch.stack(masks)
+            token_attr_adjs[i][xs[i]] = 1
+        token_attr_adjs = torch.stack(token_attr_adjs)
 
         y = self.tag2idx[tags]  # label
 
         seqlens = [len(x) for x in xs]
-        left_zslens = [len(left_z) for left_z in left_zs]
-        right_zslens = [len(right_z) for right_z in right_zs]
+        left_xslens = [len(left_x) for left_x in left_xs]
+        right_xslens = [len(right_x) for right_x in right_xs]
 
-        return words, xs, y, seqlens, masks, left_zs, right_zs, left_zslens, right_zslens, attributes
+        return words, xs, y, seqlens, token_attr_adjs, left_xs, right_xs, left_xslens, right_xslens, attributes
 
     def get_attr_num(self):
         return self.attr_num
@@ -136,20 +137,28 @@ class Dataset(data.Dataset):
               for sample in samples[x]]
              for samples in batch]  # 0: <pad>
 
+        words = f(0)
+
         # get maximal sequence length
         seqlens = f(3)
         maxlen = np.array(seqlens).max()
-
-        words = f(0)
         xs = torch.LongTensor(g(1, maxlen, 0))
-        y = f(2)
-        masks = torch.stack(f(4))
 
+        y = f(2)
         if isinstance(y[0], float):
             y = torch.Tensor(y)
         else:
             y = torch.LongTensor(y)
-        return words, xs, y, seqlens, masks
+
+        token_attr_adjs = torch.stack(f(4))
+
+        left_maxlen = np.array(f(7)).max()
+        left_xs = torch.LongTensor(g(5, left_maxlen, 0))
+
+        right_maxlen = np.array(f(8)).max()
+        right_xs = torch.LongTensor(g(6, right_maxlen, 0))
+
+        return words, xs, y, seqlens, token_attr_adjs, left_xs, right_xs
 
     @staticmethod
     def padJoin(batch):
