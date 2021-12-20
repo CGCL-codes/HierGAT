@@ -6,8 +6,6 @@ import torch
 
 from torch.utils import data
 
-from .argument import Augmenter
-
 tokenizer = None
 
 
@@ -21,6 +19,8 @@ def get_lm_path(lm, lm_path):
         return 'distilbert-base-uncased'
     elif lm == 'roberta':
         return 'roberta-base'
+    elif lm == 'roberta-large':
+        return 'roberta-large'
     elif lm == 'xlnet':
         return 'xlnet-base-cased'
 
@@ -36,7 +36,7 @@ def get_tokenizer(lm, lm_path):
         elif lm == 'distilbert':
             from transformers import DistilBertTokenizer
             tokenizer = DistilBertTokenizer.from_pretrained(path)
-        elif lm == 'roberta':
+        elif lm == 'roberta' or lm == 'roberta-large':
             from transformers import RobertaTokenizer
             tokenizer = RobertaTokenizer.from_pretrained(path)
         elif lm == 'xlnet':
@@ -47,16 +47,11 @@ def get_tokenizer(lm, lm_path):
 
 
 class Dataset(data.Dataset):
-    def __init__(self, source, category, lm='bert', lm_path=None, max_len=512, split=True, augment_op=None):
+    def __init__(self, source, category, lm='bert', lm_path=None, max_len=512, split=True):
         self.tokenizer = get_tokenizer(lm, lm_path)
 
         # tokens and tags
         self.max_len = max_len
-        self.augment_op = augment_op
-        if augment_op != None:
-            self.augmenter = Augmenter()
-        else:
-            self.augmenter = None
 
         sents, tags_li, attributes = self.read_classification_file(source, split)
 
@@ -74,11 +69,6 @@ class Dataset(data.Dataset):
         sents, labels, attributes = [], [], []
         for line in open(path):
             items = line.strip().split('\t')
-
-            if self.augmenter != None:
-                aug_items = [self.augmenter.augment_sent(item, self.augment_op)
-                             for item in items[0:-1]]
-                items[0:-1] = aug_items
 
             attrs = []
             if split:
@@ -113,7 +103,7 @@ class Dataset(data.Dataset):
 
         # Get Token-Attribute Graph
         token_attr_adjs = [torch.zeros(self.tokenizer.vocab_size, dtype=torch.int)
-                 for _ in range(self.attr_num)]
+                           for _ in range(self.attr_num)]
         for i in range(self.attr_num):
             token_attr_adjs[i][xs[i]] = 1
         token_attr_adjs = torch.stack(token_attr_adjs)
@@ -190,12 +180,11 @@ class Dataset(data.Dataset):
             right_attributes.append(right_attribute)
 
         zs = [tokenizer.encode(text=' '.join(right_attributes[i]),
-                    add_special_tokens=False, truncation="longest_first", max_length=512)
+                               add_special_tokens=False, truncation="longest_first", max_length=512)
               for i in range(attr_num)]
         maxlen = np.array([len(z) for z in zs]).max()
-        zs = [z + [0] * (maxlen-len(z)) for z in zs]
+        zs = [z + [0] * (maxlen - len(z)) for z in zs]
         zs = torch.LongTensor(zs).unsqueeze(0).permute(1, 0, 2)
-
 
         if isinstance(y[0], float):
             y = torch.Tensor(y)

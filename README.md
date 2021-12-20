@@ -37,7 +37,7 @@ python train.py \
 - `--batch_size`, `--max_len`, `--lr`, `--n_epochs`: the batch size, max sequence length, learning rate, and the number of epochs
 - `--split`: whether to split the attribute, should always be turned on
 - `--finetuning`: whether to finetune the LM, should always be turned on
-- `--lm`: the language model. We now support `bert`, `distilbert`, `xlnet`, `roberta` (`bert` by default)
+- `--lm`: the language model. We now support `bert`, `distilbert`, `xlnet`, `roberta`, `roberta-large` (`bert` by default)
   - If you want to load the model file locally, you can configure the `--lm_path`
 
 ##  Train HierGAT+

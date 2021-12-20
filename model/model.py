@@ -19,7 +19,7 @@ class TranHGAT(nn.Module):
         elif lm == 'distilbert':
             from transformers import DistilBertModel
             self.bert = DistilBertModel.from_pretrained(path)
-        elif lm == 'roberta':
+        elif lm == 'roberta' or lm == 'roberta-large':
             from transformers import RobertaModel
             self.bert = RobertaModel.from_pretrained(path)
         elif lm == 'xlnet':
