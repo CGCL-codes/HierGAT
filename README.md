@@ -1,6 +1,6 @@
 # HierGAT
 
-This is the implementation of "Entity Resolution via Hierarchical Graph Attention Network"
+This is the implementation of "Entity Resolution via Hierarchical Graph Attention Network" (SIGMOD'22)
 
 ## Environment
 
@@ -54,3 +54,16 @@ python train_n.py \
 Same as HierGAT, with one additional parameter:
 
 * `--su_len`: max entity-level context sequence length
+
+# Cite
+
+Please cite our paper if you use this code in your own work:
+
+```
+@inproceedings{yao2022hiergat,
+  title={Entity Resolution via Hierarchical Graph Attention Network},
+  author={Yao, Dezhong and Gu, Yuhong and Cong, Gao and Jin, Hai and Lv, Xinqiao},
+  booktitle={{SIGMOD} '22: International Conference on Management of Data, Philadelphia, PA, USA, June 12-17, 2022},
+  year={2022}
+}
+```
