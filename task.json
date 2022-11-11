@@ -1,5 +1,13 @@
 [
   {
+    "name": "shs_youtube_base",
+    "task_type": "classification",
+    "vocab": ["0", "1"],
+    "trainset": "data/shs_youtube/title_channel/train.txt",
+    "validset": "data/shs_youtube/title_channel/valid.txt",
+    "testset": "data/shs_youtube/title_channel/test.txt"
+  },
+  {
     "name": "Amazon-Google",
     "category": ["0", "1"],
     "trainset": "data/Amazon-Google/train.txt",
