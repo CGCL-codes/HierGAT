@@ -27,12 +27,12 @@ def train(model, train_set, optimizer, scheduler=None, batch_size=32):
     model.train()
     for i, batch in enumerate(iterator):
         # for monitoring
-        _, xs, y, _, token_attr_adjs, left_xs, right_xs = batch
+        _, xs, y, _, masks = batch
         _y = y
 
         # forward
         optimizer.zero_grad()
-        logits, y, _ = model(xs, left_xs, right_xs, y, token_attr_adjs)
+        logits, y, _ = model(xs, y, masks)
 
         logits = logits.view(-1, logits.shape[-1])
         y = y.view(-1)
