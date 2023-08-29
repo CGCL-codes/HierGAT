@@ -6,7 +6,7 @@ import torch
 
 from torch.utils import data
 
-from .argument import Augmenter
+# from .argument import Augmenter
 
 tokenizer = None
 
@@ -52,11 +52,11 @@ class Dataset(data.Dataset):
 
         # tokens and tags
         self.max_len = max_len
-        self.augment_op = augment_op
-        if augment_op != None:
-            self.augmenter = Augmenter()
-        else:
-            self.augmenter = None
+        self.augment_op = augment_op # Augmentation is not used in the currently.
+        # if augment_op != None:
+        #     self.augmenter = Augmenter()
+        # else:
+        self.augmenter = None
 
         sents, tags_li, attributes = self.read_classification_file(source, split)
 
